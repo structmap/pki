@@ -1,0 +1,9 @@
+{:closure-defines {"clojure.browser.repl.PORT" 8090}
+ :language-in  :ecmascript-next
+ :language-out :ecmascript-next
+ :foreign-libs [{:file "resources/pkijs.bundle.js"
+                 :module-type :es6
+                 :provides ["pkijs"]}
+                {:file "resources/asn1js.bundle.js"
+                 :module-type :es6
+                 :provides ["asn1js"]}]}
