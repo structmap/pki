@@ -149,7 +149,7 @@ app.MapPost("/crt/{uuid}", (string uuid, string[] chain) =>
             .LoadCertificate(Encoding.ASCII.GetBytes(chain.First()))
             .CopyWithPrivateKey(privateKey); // will throw if private key does not match certificate
 
-        if (!leafCertificate.Subject.Equals("CN=uuid"))
+        if (!leafCertificate.Subject.Equals($"CN={uuid}"))
             return Results.Text($"Certificate subject {leafCertificate.Subject} does not match URL path", "text/plain",
                 statusCode: 400);
 
